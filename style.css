@@ -1,0 +1,276 @@
+/* General Reset and Variables */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --background: #1f1f1f; /* Dark background for night mode */
+  --primary: #e2e8f0; /* Soft Gray for text, ensuring readability on dark backgrounds */
+  --accentColor: #74aa9c; /* Green Sheen for accent elements, providing a calming contrast */
+  --secondaryAccentColor: #3a3a3a; /* Darker gray for secondary accents, adding depth without harshness */
+  --backgroundSections: #232323; /* Dark Slate, for sections or cards to differentiate without too much contrast */
+}
+
+/* Global Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-color: var(--backgroundSections);
+}
+
+nav {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 580px;
+  padding: 2.5rem 2.5rem;
+}
+
+.logo_container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.logo,
+.dark-light_mode {
+  font-size: 1.2rem;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem 2.5rem;
+  margin-top: 2rem;
+  height: auto;
+  width: 580px;
+  border-radius: 3px;
+}
+
+.main_title {
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  color: var(--primary);
+  opacity: 0.9;
+  text-align: left;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.description span {
+  color: var(--primary);
+  font-weight: 600;
+  opacity: 1;
+  text-align: left;
+  font-size: 3.75rem;
+  color: orange;
+}
+
+.btn {
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--accentColor);
+  transition: all 0.05s ease;
+}
+
+.input_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.input_container input {
+  background-color: var(--secondaryAccentColor);
+  color: var(--primary);
+  font-size: 1.11rem;
+  border-radius: 35px;
+  padding: 10px 21px;
+  border: none;
+  transition: all 0.3s ease;
+  outline: none;
+  width: 100%;
+}
+
+.todo_container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+  height: 100%;
+  width: 100%;
+  border-radius: 3px;
+  overflow: auto;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.txt {
+  width: 100%;
+  border-radius: 20px;
+  padding: 3px 7px;
+  background-color: transparent;
+  color: var(--primary);
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+}
+
+.todo_container .todo:last-child {
+  margin: 0;
+}
+
+.delete {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  padding: 3px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  color: var(--accentColor);
+  transition: all 0.3s ease;
+}
+
+.todoInput:focus + .btn {
+  color: white;
+}
+
+.delete:hover {
+  color: orange;
+  transform: scale(1.06);
+}
+
+/* Responsive Design */
+
+/* Medium Screens (Tablets, 768px and below) */
+@media (max-width: 768px) {
+  section {
+    width: 50%;
+    padding: 1rem;
+  }
+
+  section h1 {
+    font-size: 1.8rem;
+  }
+
+  .btn {
+    font-size: 1.8rem;
+  }
+
+  .input_container input {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
+
+  .txt {
+    font-size: 1rem;
+  }
+
+  .delete {
+    font-size: 1rem;
+  }
+}
+
+/* Small Screens (Mobile, 480px and below) */
+@media (max-width: 480px) {
+  section {
+    width: 70%;
+    padding: 0.8rem;
+    gap: 0.8rem;
+  }
+
+  section h1 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    font-size: 1.5rem;
+  }
+
+  .input_container {
+    gap: 1rem;
+  }
+
+  .input_container input {
+    font-size: 0.9rem;
+    padding: 7px 12px;
+  }
+
+  .txt {
+    font-size: 0.9rem;
+  }
+
+  .delete {
+    font-size: 0.9rem;
+  }
+}
+
+.checkbox_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  width: 1rem; /* Set the exact size */
+  height: 1rem; /* Set the exact size */
+  background-color: transparent;
+  border-radius: 50%;
+  border: 2px solid orange; /* Border color */
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* .checkbox:checked {
+    background-color: orange;
+  } */
+/* 
+  .checkbox:checked::after {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+    color: white;
+    font-weight: bold;
+    transition: opacity 0.2s ease;
+  } */
+
+.checkbox.checked::after {
+  content: "✓";
+  position: absolute;
+  top: 50%; /* Move the symbol vertically to the center */
+  left: 50%; /* Move the symbol horizontally to the center */
+  transform: translate(-50%, -50%); /* Adjust the position to exactly center */
+  font-size: 10px;
+  color: white;
+  font-weight: bold;
+  transition: opacity 0.2s ease;
+}
