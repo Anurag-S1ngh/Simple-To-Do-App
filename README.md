@@ -12,4 +12,4 @@ A simple and intuitive Todo App to help you organize your tasks efficiently. Thi
 
 # My Project
 
-[![Visit Website](https://anurag-s1ngh.github.io/Simple-To-Do-App/)
+[![Visit Website](https://img.shields.io/badge/Visit-Website%20Now-blue?style=for-the-badge&logo=google-chrome)](https://anurag-s1ngh.github.io/Simple-To-Do-App/)
