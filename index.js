@@ -39,10 +39,24 @@ function Render(title) {
     todoDiv.appendChild(deleteDiv);
     todoContainer.appendChild(todoDiv);
     DeleteTodo(deleteDiv);
+    todoUpdate(txtInput);
+    Checkbox(checkboxInput);
 }
 
 function DeleteTodo(deleteDiv) {
     deleteDiv.addEventListener("click", () => {
         deleteDiv.closest('.todo').remove();
+    })
+}
+
+function todoUpdate(txtInput) {
+    txtInput.addEventListener("blur", () => {
+        txtInput.value = txtInput.value;
+    })
+}
+
+function Checkbox(checkboxInput) {
+    checkboxInput.addEventListener("click", () => {
+        console.log('checkbox clicked');
     })
 }
