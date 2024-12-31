@@ -14,11 +14,11 @@ todoInput.addEventListener("keypress", (e) => {
         if (todoInput.value.trim() != '') {
             Render(todoInput.value)
         }
+        todoInput.value = '';
     }
-    todoInput.value = '';
 })
 
-function Render(txt) {
+function Render(title) {
     console.log('hi');
     const todoDiv = document.createElement("div");
     const checkboxDiv = document.createElement("div");
@@ -30,7 +30,7 @@ function Render(txt) {
     checkboxInput.classList.add('checkbox');
     txtInput.classList.add('txt');
     deleteDiv.classList.add('delete');
-    txtInput.value = txt;
+    txtInput.value = title;
     deleteDiv.innerHTML = `<i class="ri-delete-bin-6-fill"></i>`;
     checkboxInput.setAttribute('type', "checkbox");
     checkboxDiv.appendChild(checkboxInput);
@@ -38,8 +38,11 @@ function Render(txt) {
     todoDiv.appendChild(txtInput);
     todoDiv.appendChild(deleteDiv);
     todoContainer.appendChild(todoDiv);
+    DeleteTodo(deleteDiv);
 }
 
-function DeleteTodo() {
-
+function DeleteTodo(deleteDiv) {
+    deleteDiv.addEventListener("click", () => {
+        deleteDiv.closest('.todo').remove();
+    })
 }
