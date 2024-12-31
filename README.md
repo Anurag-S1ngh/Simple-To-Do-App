@@ -1,10 +1,11 @@
-# Simple To-Do App
+# Todo App
 
-This is a simple To-Do app that I'm currently working on.
+A simple and intuitive Todo App to help you organize your tasks efficiently. This app allows users to create, edit, delete, and manage their todos. Currently, the light mode functionality is in progress.
 
-## Current Status:
+## Features
 
-- Frontend: Partially completed
-- Backend: Still under development
-
-Feel free to check out the repository and contribute!
+Add new tasks.
+Edit existing tasks.
+Delete tasks you no longer need.
+Mark tasks as complete or incomplete.
+Light Mode: In progress.
