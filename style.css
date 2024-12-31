@@ -185,22 +185,6 @@ section {
   cursor: pointer;
 }
 
-/* .checkbox:checked {
-    background-color: orange;
-  } */
-/* 
-  .checkbox:checked::after {
-    content: "✓";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 10px;
-    color: white;
-    font-weight: bold;
-    transition: opacity 0.2s ease;
-  } */
-
 .checkbox.checked::after {
   content: "✓";
   position: absolute;

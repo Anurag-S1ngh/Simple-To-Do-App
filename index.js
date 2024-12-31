@@ -19,7 +19,6 @@ todoInput.addEventListener("keypress", (e) => {
 })
 
 function Render(title) {
-    console.log('hi');
     const todoDiv = document.createElement("div");
     const checkboxDiv = document.createElement("div");
     const checkboxInput = document.createElement("input");
@@ -57,6 +56,16 @@ function todoUpdate(txtInput) {
 
 function Checkbox(checkboxInput) {
     checkboxInput.addEventListener("click", () => {
-        console.log('checkbox clicked');
+        if (!checkboxInput.classList.contains('checked')) {
+            checkboxInput.style.backgroundColor = "orange";
+            checkboxInput.classList.add('checked');
+            checkboxInput.closest('.todo').querySelector('.txt').style.textDecoration = "line-through";
+            checkboxInput.closest('.todo').querySelector('.txt').style.opacity = 0.7;
+        } else {
+            checkboxInput.style.backgroundColor = "transparent";
+            checkboxInput.classList.remove('checked');
+            checkboxInput.closest('.todo').querySelector('.txt').style.textDecoration = "none";
+            checkboxInput.closest('.todo').querySelector('.txt').style.opacity = 1;
+        }
     })
 }
